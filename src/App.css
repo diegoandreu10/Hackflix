@@ -168,7 +168,7 @@ main {
 }
 
 .image-main {
-  background-image: url(public/images/moviesdesenfocado.png); 
+  background-image: url(/images/moviesdesenfocado.png); 
   background-size: cover;
   background-position: center;
   display: flex;
