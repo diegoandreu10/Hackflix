@@ -2,10 +2,10 @@ import { FaMinus, FaPlus, FaTimes, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
-  addToCart,
   clearCart,
   removeFromCart,
   selectCartItems,
+  updateQuantity,
 } from "../features/cartSlice";
 
 const Cart = ({ isOpen, onClose }) => {
@@ -28,16 +28,11 @@ const Cart = ({ isOpen, onClose }) => {
   };
 
   const handleIncreaseQuantity = (item) => {
-    dispatch(addToCart(item));
+    dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }));
   };
 
   const handleDecreaseQuantity = (item) => {
-    if (item.quantity > 1) {
-      dispatch(removeFromCart(item.id));
-      dispatch(addToCart({ ...item, quantity: item.quantity - 1 }));
-    } else {
-      dispatch(removeFromCart(item.id));
-    }
+    dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }));
   };
 
   const handleClearCart = () => {
@@ -83,18 +78,12 @@ const Cart = ({ isOpen, onClose }) => {
                     </p>
 
                     <div className="quantity-controls">
-                      <button>
-                        <FaMinus
-                          onClick={() => handleDecreaseQuantity(item)}
-                          className="quantity-btn"
-                        />
+                      <button onClick={() => handleDecreaseQuantity(item)}>
+                        <FaMinus className="quantity-btn" />
                       </button>
                       <span className="quantity-display">{item.quantity}</span>
-                      <button>
-                        <FaPlus
-                          onClick={() => handleIncreaseQuantity(item)}
-                          className="quantity-btn"
-                        />
+                      <button onClick={() => handleIncreaseQuantity(item)}>
+                        <FaPlus className="quantity-btn" />
                       </button>
                     </div>
                   </div>
@@ -121,7 +110,7 @@ const Cart = ({ isOpen, onClose }) => {
 
         <div className="cart-footer">
           {cartItems.length > 0 && (
-            <NavLink to="/checkout" className="checkout-btn">
+            <NavLink to="/checkout" className="checkout-btn" onClick={onClose}>
               Checkout
             </NavLink>
           )}
