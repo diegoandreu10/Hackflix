@@ -38,7 +38,7 @@ const AboutMePage = () => {
         </ul>
 
         <h2>About the developer</h2>
-        <img src="images/IMG_0274.jpeg" alt="Diego Andreu"></img>
+        <img src="public/images/IMG_0274.jpeg" alt="Diego Andreu"></img>
         <p>
           My name is <strong>Diego Andreu</strong>, I am a{" "}
           <strong>student of Information Technology Analysis</strong> and a
