@@ -22,8 +22,8 @@ const Header = () => {
   const autenticado = !!token;
 
   const handleLogout = () => {
-    dispatch(logout()); 
-    localStorage.removeItem("token"); 
+    dispatch(logout());
+    localStorage.removeItem("token");
     navigate("/");
     window.location.reload();
   };

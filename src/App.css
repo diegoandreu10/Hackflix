@@ -1321,9 +1321,14 @@ main {
 }
 
 .about-container img {
-  height: 30vh;
-  width: 12vw;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 1rem 0;
 }
+
 
 .about-page h1 {
   font-size: 2rem;
