@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { selectCartItems } from "../features/cartSlice";
@@ -13,6 +13,7 @@ const Header = () => {
 
   const [showMenu, setShowMenu] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const token = useSelector((state) => state.user.token);
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -40,6 +41,10 @@ const Header = () => {
     setIsCartOpen(false);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const getTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
@@ -47,11 +52,14 @@ const Header = () => {
   return (
     <>
       <header className="header">
+        {/* Logo siempre visible */}
         <NavLink className="nav-logo" to="/">
           <h2>
             Hack<span style={{ color: "darkorange" }}>Flix</span>
           </h2>
         </NavLink>
+
+        {/* Nav principal (desktop) */}
         <nav className="nav-links">
           <NavLink className="navLink" to="/">
             Home
@@ -93,7 +101,49 @@ const Header = () => {
             )}
           </button>
         </nav>
+
+        {/* Botón menú hamburguesa solo en mobile */}
+        <button className="hamburger" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </header>
+
+      {/* Menú hamburguesa */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+          <NavLink to="/" onClick={toggleMobileMenu}>
+            Home
+          </NavLink>
+          <NavLink to="/aboutme" onClick={toggleMobileMenu}>
+            About Me
+          </NavLink>
+
+          {!autenticado ? (
+            <>
+              {location.pathname === "/login" ? (
+                <NavLink to="/register" onClick={toggleMobileMenu}>
+                  Register
+                </NavLink>
+              ) : (
+                <NavLink to="/login" onClick={toggleMobileMenu}>
+                  Login
+                </NavLink>
+              )}
+            </>
+          ) : (
+            <>
+              <NavLink to="/profile" onClick={toggleMobileMenu}>
+                Profile
+              </NavLink>
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          )}
+
+          <button onClick={() => { toggleCart(); toggleMobileMenu(); }}>
+            <FaShoppingCart /> ({getTotalItems()})
+          </button>
+        </div>
+      )}
 
       <Cart isOpen={isCartOpen} onClose={closeCart} />
     </>

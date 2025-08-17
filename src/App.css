@@ -161,6 +161,11 @@ html, body {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* === Mobile Menu === */
+.hamburger{
+  display: none;
+}
+
 /* ===== MAIN CONTENT ===== */
 main {
   padding-top: 0;
@@ -190,7 +195,7 @@ main {
   font-size: 1rem;
   border: none;
   border-radius: 50px;
-  width: 20vw; 
+  width: 40vw; 
   height: 7vh;
   text-align: center;
   background: rgba(46, 45, 45, 0.9);
@@ -1568,7 +1573,39 @@ main {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 650px) {
+  .nav-links{
+    display: none;
+  }
+
+  .hamburger {
+    display: block; /* aparece el botón hamburguesa */
+    background-color: transparent;
+    border: 1px solid;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 10vh; /* altura exacta de tu header */
+    left: 0;
+    right: 0;
+    background-color:darkgrey;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    z-index: 999; /* debajo de header (1000) */
+  }
+
+  .mobile-menu a,
+  .mobile-menu button {
+    color: black;
+    text-align: center;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+  }
+
   .login-form, .register-form {
     padding: 1vh 2vw;
   }
@@ -1576,6 +1613,10 @@ main {
   .login-form::before, .register-form::before {
     width: 98vw;
     height: min(85vh, 500px);
+  }
+
+  .movie-list {
+    padding: 2rem 5vw;
   }
 
   .movie-content {
