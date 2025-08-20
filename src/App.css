@@ -1802,4 +1802,10 @@ main {
     font-size: 1rem;
     font-weight: bold;
   }
+
+  .login-form,
+  .register-form {
+    padding-top: 12vh;
+    overflow-y: auto;
+  }
 }
