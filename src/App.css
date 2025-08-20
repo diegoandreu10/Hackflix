@@ -1622,14 +1622,21 @@ main {
   }
 
   .back-button {
-    margin-bottom: 1rem; 
-    position: relative;
-    z-index: 10;
-  }
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
 
-  .movie-title{
-    margin-top: 5rem;
-  }
+.movie-hero {
+  position: relative;
+  padding-top: 3.5rem; /* deja espacio arriba para el back */
+}
+
+.movie-title {
+  margin-top: 0; /* quitamos el margen forzado */
+}
+
 
   .movie-content {
     max-width: 100%;
