@@ -5,32 +5,47 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
 #root {
-  max-width: 100%; 
+  max-width: 100%;
   text-align: center;
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -49,12 +64,12 @@ html, body {
   backdrop-filter: blur(20px) saturate(200%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   width: 100vw;
-  padding: 2.5vh 15vw; 
+  padding: 2.5vh 15vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  height: 10vh; 
+  height: 10vh;
   box-sizing: border-box;
   z-index: 1000;
 }
@@ -162,7 +177,7 @@ html, body {
 }
 
 /* === Mobile Menu === */
-.hamburger{
+.hamburger {
   display: none;
 }
 
@@ -173,7 +188,7 @@ main {
 }
 
 .image-main {
-  background-image: url(/images/moviesdesenfocado.png); 
+  background-image: url(/images/moviesdesenfocado.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -183,10 +198,10 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh; 
+  height: 100vh;
   width: 100vw;
   margin: 0;
-  padding-top: calc(7vh + 5vh); 
+  padding-top: calc(7vh + 5vh);
   box-sizing: border-box;
 }
 
@@ -195,7 +210,7 @@ main {
   font-size: 1rem;
   border: none;
   border-radius: 50px;
-  width: 40vw; 
+  width: 40vw;
   height: 7vh;
   text-align: center;
   background: rgba(46, 45, 45, 0.9);
@@ -341,7 +356,12 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   display: flex;
   align-items: center;
   padding: 0 15vw;
@@ -970,7 +990,8 @@ main {
 }
 
 /* ===== LOGIN & REGISTER PAGES ===== */
-.login-page, .register-page {
+.login-page,
+.register-page {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -979,13 +1000,15 @@ main {
   overflow: hidden;
 }
 
-.login-page::before, .register-page::before {
-  content: '';
+.login-page::before,
+.register-page::before {
+  content: "";
   height: 10vh;
   flex-shrink: 0;
 }
 
-.login-form, .register-form {
+.login-form,
+.register-form {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -1000,13 +1023,15 @@ main {
   gap: min(1.5vh, 1rem);
 }
 
-.login-form > *, .register-form > * {
+.login-form > *,
+.register-form > * {
   width: 100%;
   max-width: 500px;
 }
 
-.login-form::before, .register-form::before {
-  content: '';
+.login-form::before,
+.register-form::before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1019,7 +1044,8 @@ main {
   z-index: -1;
 }
 
-.login-form h2, .register-form h2 {
+.login-form h2,
+.register-form h2 {
   font-size: min(3vh, 2rem);
   margin: 0 0 min(2vh, 1rem) 0;
   text-align: center;
@@ -1039,14 +1065,17 @@ main {
   gap: min(1vh, 0.5rem);
 }
 
-.login-form label, .register-form label {
+.login-form label,
+.register-form label {
   font-size: min(1.8vh, 0.9rem);
   color: #ccc;
   margin-bottom: min(0.5vh, 0.2rem);
   text-align: left;
 }
 
-.login-form input, .register-form input, .form-column input {
+.login-form input,
+.register-form input,
+.form-column input {
   width: 100%;
   padding: min(1.2vh, 0.6rem) 1rem;
   margin-bottom: min(1vh, 0.5rem);
@@ -1059,12 +1088,15 @@ main {
   height: min(5vh, 40px);
 }
 
-.login-form input:focus, .register-form input:focus, .form-column input:focus {
+.login-form input:focus,
+.register-form input:focus,
+.form-column input:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
-#btnLogin, #btnRegister {
+#btnLogin,
+#btnRegister {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1081,13 +1113,15 @@ main {
   height: min(5vh, 40px);
 }
 
-#btnLogin:hover, #btnRegister:hover {
+#btnLogin:hover,
+#btnRegister:hover {
   background-color: darkorange;
   color: white;
   transform: translateY(-2px);
 }
 
-.login-form a, .register-form a {
+.login-form a,
+.register-form a {
   color: #007bff;
   text-decoration: none;
   font-size: min(5vh, 1rem);
@@ -1096,7 +1130,8 @@ main {
   transition: color 0.3s ease;
 }
 
-.login-form a:hover, .register-form a:hover {
+.login-form a:hover,
+.register-form a:hover {
   color: #66b3ff;
 }
 
@@ -1334,7 +1369,6 @@ main {
   margin: 1rem 0;
 }
 
-
 .about-page h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -1392,23 +1426,27 @@ main {
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-height: 500px) {
-  .login-form, .register-form {
+  .login-form,
+  .register-form {
     gap: 0.3rem;
     padding: 1vh 10vw;
   }
-  
+
   .form-columns {
     flex-direction: column;
     gap: 0.3rem;
   }
-  
-  .login-form input, .register-form input, .form-column input {
+
+  .login-form input,
+  .register-form input,
+  .form-column input {
     height: 30px;
     padding: 0.3rem 0.8rem;
     margin-bottom: 0.3rem;
   }
-  
-  #btnLogin, #btnRegister {
+
+  #btnLogin,
+  #btnRegister {
     height: 35px;
     padding: 0.5rem 1.5rem;
   }
@@ -1419,71 +1457,77 @@ main {
     flex-direction: row;
     gap: 1rem;
   }
-  
-  .login-form, .register-form {
+
+  .login-form,
+  .register-form {
     gap: 0.2rem;
   }
-  
-  .login-form input, .register-form input, .form-column input {
+
+  .login-form input,
+  .register-form input,
+  .form-column input {
     height: 25px;
     font-size: 0.8rem;
   }
-  
-  .login-form h2, .register-form h2 {
+
+  .login-form h2,
+  .register-form h2 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .login-form, .register-form {
+  .login-form,
+  .register-form {
     padding: 2vh 5vw;
   }
-  
+
   .form-columns {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
-  .login-form::before, .register-form::before {
+
+  .login-form::before,
+  .register-form::before {
     width: 95vw;
   }
 
   .movie-hero-overlay {
     padding: 0 5vw;
   }
-  
+
   .movie-meta {
     flex-direction: column;
     gap: 0.5rem;
     align-items: flex-start;
   }
-  
+
   .movie-meta span::after {
     display: none;
   }
-  
+
   .movie-actions {
     flex-wrap: wrap;
     gap: 1rem;
   }
-  
+
   .action-btn {
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
   }
-  
+
   .movie-price {
     font-size: 1.5rem;
     margin-left: 0;
     margin-top: 0.5rem;
   }
-  
+
   .movie-trailer-section {
     padding: 2rem 5vw;
   }
-  
+
   .back-button {
     top: 11vh;
     left: 1rem;
@@ -1495,23 +1539,23 @@ main {
     width: 100vw;
     right: -100vw;
   }
-  
+
   .cart-header {
     padding: 1rem;
   }
-  
+
   .cart-content {
     padding: 1rem 0.5rem;
   }
-  
+
   .cart-footer {
     padding: 1rem;
   }
-  
+
   .cart-item {
     padding: 0.8rem;
   }
-  
+
   .cart-item-image {
     width: 60px;
     height: 85px;
@@ -1521,12 +1565,12 @@ main {
     grid-template-columns: 1fr;
     gap: 2vh;
   }
-  
+
   .checkout-page {
     padding-top: 10vh;
     padding-bottom: 1vh;
   }
-  
+
   .checkout-header {
     margin-bottom: 2vh;
   }
@@ -1535,37 +1579,37 @@ main {
     width: 90vw;
     padding: 0 1rem;
   }
-  
+
   .profile-section h1 {
     font-size: 2rem;
   }
-  
+
   .orders-section h2 {
     font-size: 1.5rem;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .order-content {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .profile-form {
     padding: 1.5rem;
   }
-  
+
   .order-card {
     padding: 1rem;
   }
-  
+
   .edit-actions {
     flex-direction: column;
   }
-  
+
   .edit-btn,
   .save-btn,
   .cancel-btn {
@@ -1608,7 +1652,8 @@ main {
 
   .login-form,
   .register-form {
-    padding: 1vh 2vw;
+    padding-top: 12vh;
+    overflow-y: auto;
   }
 
   .login-form::before,
@@ -1621,22 +1666,14 @@ main {
     padding: 2rem 5vw;
   }
 
-  .back-button {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 10;
-}
+  .movie-hero {
+    position: relative;
+    padding-top: 3.5rem; /* deja espacio arriba para el back */
+  }
 
-.movie-hero {
-  position: relative;
-  padding-top: 3.5rem; /* deja espacio arriba para el back */
-}
-
-.movie-title {
-  margin-top: 0; /* quitamos el margen forzado */
-}
-
+  .movie-title {
+    margin-top: 0; /* quitamos el margen forzado */
+  }
 
   .movie-content {
     max-width: 100%;
@@ -1697,27 +1734,17 @@ main {
   }
 }
 
-
 @media (min-width: 1400px) {
   .checkout-container {
     max-width: 1200px;
   }
-  
+
   .checkout-content {
     gap: 4rem;
   }
 }
 
 @media (max-width: 400px) {
-
-  .back-button {
-    margin-bottom: 0.8rem;
-    font-size: 0.85rem;
-    padding: 0.4rem 0.7rem;
-    z-index: 10;
-    position: relative;
-  }
-
   .movie-hero {
     background-position: center;
     background-size: cover;
@@ -1726,7 +1753,7 @@ main {
   }
 
   .movie-hero-overlay {
-    background: rgba(0, 0, 0, 0.65); 
+    background: rgba(0, 0, 0, 0.65);
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -1776,4 +1803,3 @@ main {
     font-weight: bold;
   }
 }
-
